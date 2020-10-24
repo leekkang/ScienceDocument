@@ -1,0 +1,32 @@
+Windows Registry Editor Version 5.00
+
+; Windows Terminal 실행을 폴더 컨텍스트에 추가하는 내용의 레지스트리
+
+; 폴더 우클릭 시 나오는 컨텍스트에 추가
+[HKEY_CLASSES_ROOT\Directory\shell\WTGit]
+@="Open Git Bash in WT"
+"Icon"="%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico"
+
+[HKEY_CLASSES_ROOT\Directory\shell\WTGit\command]
+@="C:\\Users\\Kanghyuk\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p \"Git Bash\" -d ."
+
+; 폴더 배경 우클릭 시 나오는 컨텍스트
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WTGit]
+@="Open Git Bash in WT"
+"Icon"="%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WTGit\command]
+@="C:\\Users\\Kanghyuk\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p \"Git Bash\" -d ."
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal]
+@="Open in Windows Terminal"
+;"Icon"="%LOCALAPPDATA%\\Terminal\\icon_wt.ico"
+"Icon"="%USERPROFILE%\\Desktop\\github_repository\\ScienceDocument\\img\\icon_wt.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal\command]
+@="C:\\Users\\Kanghyuk\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -d ."
+
+
+;@="%LOCALAPPDATA%\\Microsoft\\WindowsApps\\wt.exe -p \"Git Bash\" -d \"%1\"" 권한 문제로 %LOCALAPPDATA% 는 사용할 수 없다...
+;@="%PROGRAMFILES%\\WindowsApps\\Microsoft.WindowsTerminal_1.3.2651.0_x64__8wekyb3d8bbwe\\wt.exe -p \"Git Bash\" -d \"%1\""

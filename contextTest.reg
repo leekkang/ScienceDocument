@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\testcmd]
+@="Test Command Window Directory"
+[HKEY_CLASSES_ROOT\Directory\shell\testcmd\command]
+@="cmd.exe /k \"echo %A`%B`%C`%D`%E`%F`%G`%H`%I`%J`%K`%L`%M`%N`%O`%P`%Q`%R`%S`%T`%U`%V`%W`%X`%Y`%Z`%1`%2`%3`\""
+
+; D, H, I, L, S, U, V, W, 1 만 값을 반환한다.
+; 그 중 의미있는 값은 L, V, W, 1 이다. L, V, 1은 현재 디렉토리 경로, W는 부모 디렉토리 경로를 반환한다.
