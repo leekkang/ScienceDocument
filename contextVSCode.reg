@@ -29,4 +29,4 @@ Windows Registry Editor Version 5.00
 "Icon"="%PROGRAMFILES%\\Microsoft VS Code\\Code.exe,0"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\vscode\command]
-@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe .\""
+@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%W\""
