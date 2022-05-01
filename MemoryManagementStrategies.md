@@ -81,7 +81,7 @@
 
 * 연속적이지 않은 공간을 활용할 수 있기 때문에 외부 단편화 문제를 해결할 수 있다.
 * 페이지 단위에 맞게 꽉 채워 쓰는 것이 아니기 때문에 내부 단편화 문제는 해결할 수 없다.
-
+ㅁㅇㄴㄹ
 * https://goodmilktea.tistory.com/35?category=816729
 * https://jhnyang.tistory.com/290
 * https://sisru4070.tistory.com/66?category=566152
