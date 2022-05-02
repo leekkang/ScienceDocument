@@ -3,7 +3,7 @@
 * 운영체제 내에서 메모리 시스템에 대한 전반적인 지식들을 모아놓은 문서
 
   
-## [스택 프레임](https://hg2lee.tistory.com/entry/Stack-Fame)
+## [스택 프레임](https://eliez3r.github.io/post/2019/10/16/study-system.Stack-Frame.html)
 
 * 어떤 함수가 호출되었을 때 그 함수가 점유하는 메모리 블록
   
@@ -26,7 +26,7 @@
 * `프롤로그` : 스택 프레임을 생성하기 위해 `EBP`를 스택에 저장하고 `ESP`값으로 변경하는 일련의 과정
   * 함수가 호출되면 일단 그 함수의 파라미터들이 먼저 스택에 쌓이고 그 뒤에 `CALL` 명령을 수행한다.
 
-  * 스택에 반환주소(`RET`)와 프레임 포인터(`SFP`)를 넣은 시점에서의 `ESP` 값이 현재 함수의 `EBP` 값이 된다.
+  * 스택에 반환주소(`RET`)와 이전 함수의 프레임 포인터(`SFP`)를 넣은 시점에서의 `ESP` 값이 현재 함수의 `EBP` 값이 된다.
   * 실제 코드
     * `PUSH EBP` : 이전 함수의 프레임 포인터(현재 `EBP`값)를 스택에 push한다.
 
@@ -48,6 +48,7 @@
 
 * https://foxtrotin.tistory.com/167
 * https://foxtrotin.tistory.com/262
+* https://hg2lee.tistory.com/entry/Stack-Fame
 
 ## 함수 호출 규약
 
@@ -81,7 +82,7 @@
 
 * 연속적이지 않은 공간을 활용할 수 있기 때문에 외부 단편화 문제를 해결할 수 있다.
 * 페이지 단위에 맞게 꽉 채워 쓰는 것이 아니기 때문에 내부 단편화 문제는 해결할 수 없다.
-ㅁㅇㄴㄹ
+
 * https://goodmilktea.tistory.com/35?category=816729
 * https://jhnyang.tistory.com/290
 * https://sisru4070.tistory.com/66?category=566152
