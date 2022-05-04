@@ -1,15 +1,17 @@
 # Reference
 
-* https://docs.microsoft.com/ko-kr/windows/terminal/
+  - https://docs.microsoft.com/ko-kr/windows/terminal/
 
-* 설정 버튼을 누를 때 `alt`를 누르면 `default.json` 파일이 켜진다.
+  - 설정 버튼을 누를 때 `alt`를 누르면 `default.json` 파일이 켜진다.
 
-* 아래의 설정들은 쓸만한 것만 코드로 썼다. 다른 설정이 필요하면 해당 탭의 메뉴얼을 확인하자.
-* 값들은 디폴트로 지정되어 있는 값들이다.
+  - 아래의 설정들은 쓸만한 것만 코드로 썼다. 다른 설정이 필요하면 해당 탭의 메뉴얼을 확인하자.
+  - 값들은 디폴트로 지정되어 있는 값들이다.
 
+
+---
 # [글로벌 설정](https://docs.microsoft.com/ko-kr/windows/terminal/customize-settings/global-settings)
 
-* 프로필 설정에 관계없이 모든 터미널 창에 영향을 주는 설정들.
+  - 프로필 설정에 관계없이 모든 터미널 창에 영향을 주는 설정들.
 
 ```sh
 "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}" // 기본 프로필, GUID를 사용한다.
@@ -22,10 +24,11 @@
 "snapToGridOnResize": true // 창 크기 조절 시 가까운 문자 경계에 맞춰짐.
 ```
 
+---
 # [프로필 설정](https://docs.microsoft.com/ko-kr/windows/terminal/customize-settings/profile-settings)
 
-* 각각의 고유한 프로필에 영향을 주는 설정들.
-* 모든 프로필에 적용하고 싶은 설정들은 `defaults` 섹션에 추가하자.
+  - 각각의 고유한 프로필에 영향을 주는 설정들.
+  - 모든 프로필에 적용하고 싶은 설정들은 `defaults` 섹션에 추가하자.
 
 ```sh
 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}" // 필수
@@ -58,11 +61,12 @@
                           // `graceful, always, never` 값을 사용할 수 있다.
 ```
 
+---
 # [커스텀 액션 설정](https://docs.microsoft.com/ko-kr/windows/terminal/customize-settings/actions)
 
-* 키 바인딩으로 원하는 동작을 실행시킬 수 있다.
-* `command`는 등록되어 있는 키값만 사용가능
-* `keys` 의 값은 `ctrl+, shift+, alt+` 세 개의 모디파이어와 키보드에 대응되는 키의 조합으로 이루어진다.
+  - 키 바인딩으로 원하는 동작을 실행시킬 수 있다.
+  - `command`는 등록되어 있는 키값만 사용가능
+  - `keys` 의 값은 `ctrl+, shift+, alt+` 세 개의 모디파이어와 키보드에 대응되는 키의 조합으로 이루어진다.
 
 ```sh
 { "command": "closeWindow", "keys": "alt+f4" } // 프로그램 닫기
@@ -104,11 +108,12 @@
 { "command": "resetFontSize", "keys": "ctrl+0" } // 리셋
 ```
 
+---
 # [커맨드 라인 파라미터](https://docs.microsoft.com/ko-kr/windows/terminal/command-line-arguments?tabs=windows)
 
-* `Windows Terminal` 의 새 인스턴스를 열 때 사용할 수 있는 명령어들
-* 기본 모양은 `wt [options] [command ; ]` 이다.
-* `WT`와 `powershell` 의 명령줄 구분 기호가 세미콜론으로 동일하기 때문에 문자열을 작은 따옴표로 래핑하던가, 세미콜론을 이스케이프 하거나, `--%` 를 사용하여 나머지 부분을 인수로 처리하도록 한다.
+  - `Windows Terminal` 의 새 인스턴스를 열 때 사용할 수 있는 명령어들
+  - 기본 모양은 `wt [options] [command ; ]` 이다.
+  - `WT`와 `powershell` 의 명령줄 구분 기호가 세미콜론으로 동일하기 때문에 문자열을 작은 따옴표로 래핑하던가, 세미콜론을 이스케이프 하거나, `--%` 를 사용하여 나머지 부분을 인수로 처리하도록 한다.
 
 ```sh
 // "Ubuntu-18.04" 프로필 인스턴스 열기
@@ -135,20 +140,21 @@ wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H ws
 cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -p "Windows PowerShell" \; split-pane -H wsl.exe    // linux
 ```
 
+---
 # [커맨드 라인 팔레트](https://docs.microsoft.com/ko-kr/windows/terminal/command-palette)
 
-* 현재 인스턴스에서 파라미터를 이용한 명령어를 사용하고 싶을 때 사용
-* 등록되어 있는 커맨드들을 검색하여 실행시킬 수도 있다.
+  - 현재 인스턴스에서 파라미터를 이용한 명령어를 사용하고 싶을 때 사용
+  - 등록되어 있는 커맨드들을 검색하여 실행시킬 수도 있다.
 
+---
 # 코드
 
-* 미리보기에서 절대경로는 처리가 안되나..?
+  - 미리보기에서 절대경로는 처리가 안되나..?
 
-[settings.json](file:///C:/Users/Kanghyuk/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json)
+  [settings.json](file:///C:/Users/Kanghyuk/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json)
 
-<a href="file:///C:/Users/Kanghyuk/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"> `settings.json` </a>
-
-* default.json
+  - <a href="file:///C:/Users/Kanghyuk/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"> `settings.json` </a>
+  - default.json
 
 ```sh
 // THIS IS AN AUTO-GENERATED FILE! Changes to this file will be ignored.
