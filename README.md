@@ -3,12 +3,12 @@
 
 - 개인적인 궁금증을 정리해놓은 저장소
 
-1. [Windows Terminal](WindowsTerminal.md)
+1. ## [Windows Terminal](WindowsTerminal.md)
    
-2. [About Console, Terminal and Shell](AboutConsole,TerminalandShell.md)
-3. [About GNU Programs in Windows](Gnu프로그램비교.md)
-4. [About Bash Commands](AboutBashCommands.md)
-5. [Git Commands](유용한%20Git%20커맨드.md)
+2. ## [About Console, Terminal and Shell](AboutConsole,TerminalandShell.md)
+3. ## [About GNU Programs in Windows](Gnu프로그램비교.md)
+4. ## [About Bash Commands](AboutBashCommands.md)
+5. ## [Git Commands](유용한%20Git%20커맨드.md)
 
 - Operating Systems
   - [Memory Management Strategy](MemoryManagementStrategies.md)
@@ -36,7 +36,11 @@
   - https://bozeury.tistory.com/entry/C%EC%99%80-C%EC%9D%98-%EC%B0%A8%EC%9D%B4?category=826469
 
 - 컴파일러 최적화 종류와 기법 
-  - https://bloofer.tistory.com/14 
+  - https://bloofer.tistory.com/14
+
+- Makefile 강좌
+  - http://doc.kldp.org/KoreanDoc/html/GNU-Make/GNU-Make.html#toc8
+  - https://www.youtube.com/watch?v=jnJL6ppn26Q
 
 - C언어 표준함수 헤더 파일, 소스 위치
   - 헤더 위치 : `C:\Program Files (x86)\Windows Kits\10\Include\10.0~(SDK버전)\ucrt`
