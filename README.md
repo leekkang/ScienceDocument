@@ -10,9 +10,6 @@
 4. ## [About Bash Commands](AboutBashCommands.md)
 5. ## [Git Commands](유용한%20Git%20커맨드.md)
 
-- Operating Systems
-  - [Memory Management Strategy](MemoryManagementStrategies.md)
-
 
 - `Windows Terminal` 을 컨텍스트 목록에 추가하는 레지스트리
   - [add context WT](contextTerminal.reg)
@@ -24,10 +21,6 @@
   - https://stackoverflow.com/questions/3681032/set-icon-for-custom-right-click-context-menu-item-for-all-desktop-shortcuts-win
   - https://stackoverflow.com/questions/20449316/how-add-context-menu-item-to-windows-explorer-for-folders
   - https://luvery93.github.io/articles/2018-10/windows10-open-a-command-prompt-in-any-folder-from-the-right-click-context-menu
-
-- 운영체제 공부 블로그
-  - https://jhnyang.tistory.com/notice/31
-  - https://goodmilktea.tistory.com/30?category=816729
 
 - OOP의 5대 원칙
   - https://bozeury.tistory.com/entry/OOP%EC%9D%98-5%EB%8C%80-%EC%9B%90%EC%B9%99?category=826469
