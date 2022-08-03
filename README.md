@@ -1,7 +1,7 @@
 
 # ScienceDocument
 
-- 개인적인 궁금증을 정리해놓은 저장소
+- 개인적인 궁금증을 정리해놓은 저장소.
 
 1. ## [Windows Terminal](WindowsTerminal.md)
    
