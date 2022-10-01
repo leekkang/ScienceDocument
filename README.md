@@ -40,6 +40,42 @@
   - 소스 위치 : `C:\Program Files (x86)\Windows Kits\10\Source`
   - 참조 : https://blog.naver.com/tipsware/221275585536
 
+
+
+---
+# 빌드 시간 단축방법
+
+  - [MP(Multicore-Process) 옵션을 통한 빌드 시간 단축](https://learn.microsoft.com/en-us/cpp/build/reference/mp-build-with-multiple-processes?view=msvc-170)
+    - 컴파일러가 별도의 프로세스에 하나 이상의 자체 복사본을 만들어 동시에 소스 파일을 컴파일 한다.
+    - `C/C++ -> 코드 생성 -> 최소 다시 빌드 가능` 옵션을 해제해야 한다.
+      - 더 이상 사용되지 않는 옵션이다. [문서](https://learn.microsoft.com/ko-kr/cpp/build/reference/gm-enable-minimal-rebuild?view=msvc-170)
+    - `옵션 -> 프로젝트 및 솔루션 ->VC++ 프로젝트 설정` 탭에 사용가능한 프로세스 수를 지정할 수 있다. 0은 가능한 모든 프로세스를 사용한다는 것이다. (== `/MP number`)
+    - [가이드](https://learn.microsoft.com/ko-kr/visualstudio/msbuild/using-multiple-processors-to-build-projects?view=vs-2022)
+  
+  - [증분 링크(Incremental Linking)](https://learn.microsoft.com/en-us/cpp/build/reference/incremental-link-incrementally?view=msvc-170)
+    - 링킹 과정에서 필요한 `메모리 배치, 함수 순서, 코드/데이터 영역 계산 시간`을 줄이기 위해 수정된 것만 재계산하는 방식
+    
+    - 후속 증분 링크, 증분 링크된 실행파일, 라이브러리 파일 등을 대비하기 때문에 미증분된 프로그램보다 크기가 크다. (패딩 적용)
+    - `링커 -> 일반 -> 증분 링크 사용` 옵션으로 적용 가능하다.
+    - 2022 버전에는 기본적으로 디버그 모드에서는 켜져있다.
+    - 가끔 빌드가 꼬일 때가 있는데 리빌드 하면 된다.
+  
+  - [유니티 빌드(Unity Build, Jumbo Build)]()
+    - 여러 개의 컴파일 단위(`Translation Unit`)들을 하나의 단위로 묶어 프로젝트 컴파일 속도를 높이는 방법이다.
+    
+    - 주로 `#include` 지시문을 사용하여 여러 개의 소스파일을 하나의 큰 파일로 묶어서 수행한다.
+    - 중복되는 헤더 파일들의 컴파일 횟수가 상당히 줄어들며, 오브젝트 코드 개수가 줄어들기 때문에 해당 파일 내에서 프로시저 간 분석 및 최적화가 가능하다.
+    - 단점으로는, 메모리 사용량이 커진다는 것, 일부 구문의 충돌(static 같은), 동일한 이름의 함수를 정의하는 것, 매크로 정의 충돌 등이 있다.
+    - 오브젝트 파일이 너무 커지면 [C1128 에러](https://learn.microsoft.com/ko-kr/cpp/error-messages/compiler-errors-1/fatal-error-c1128?view=msvc-170)가 발생할 수 있다. 명령줄에 `/bigobj` 명령을 추가하면 해결된다.
+    - 메모리 관련 문제 해결을 위해 `속성 -> 고급 -> 기본 설정 빌드 도구 아키텍처`를 64비트로 바꾸면 해결된다.
+    - 수정이 힘든 파일은 `C/C++ -> Unity 빌드 -> Unity 파일에 포함` 옵션을 사용하여 유니티 빌드에서 제외하면 된다.
+    - 협업하는 경우 `include 누락`(외부에서 빌드 파일 구성이 변경되는 경우)을 조심해야 한다.
+
+  - 참고
+    - http://egloos.zum.com/sweeper/v/3051658
+    - https://blueasa.tistory.com/587
+    - https://imitursa.tistory.com/4368
+
 ---
 # [윈도우 환경변수 문자열 종류](https://badayak.com/entry/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A2%85%EB%A5%98)
 
