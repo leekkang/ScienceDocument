@@ -25,4 +25,29 @@
 ```
   C:\work> find . -name "*.[ch]" | sed -e "/svn/d" | less
 ```
+
+---
+자주 사용하는 명령어
+  -
+  - 경로 확인 (ex. `C:\Test\abc\test.bat`)
+    - `%0` : 현재 파일 전체 경로 (`C:\Test\abc\test.bat`)
+    - `%~d0` : 드라이브 이름 (`C:`)
+    - `%~p0` : 현재 파일 경로 (`\Test\abc\`)
+    - `%~n0` : 현재 파일명 (`test`)
+    - `%~x0` : 현재 파일 확장자명 (`.bat`)
+    - `%~dp0` : 현재 파일 경로 (`C:\Test\abc\`)
+  - 현재 스크립트 위치로 이동
+    - `%1 ~ %9`는 커맨드라인 매개변수와 대응된다. 0은 현재 실행 파일의 경로인 셈
+```
+  pushd %~dp0
+```
+  - 루프문
+    - 괄호는 각각 (초기값, 증가값, 목표값) 이다.
+```
+ for /L %%i in (1, 1, 10) do (
+  ....
+)
+```
+
+
 [Reserved Variable]: https://blog.gaerae.com/2015/01/bash-hello-world.html
